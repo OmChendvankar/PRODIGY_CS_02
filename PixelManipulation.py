@@ -136,7 +136,7 @@ class ImageEncryptionApp(QWidget):
             self.load_image(self.output_path)
             QMessageBox.information(self, "Success", "Image encrypted successfully!")
         except Exception as e:
-            QMessageBox.critical(self, "Error", str(e))
+            QMessageBox.critical(self, "Error", "Enter a valid number between 0 - 255")
 
     def decrypt_image(self):
         if not self.input_path:
@@ -152,7 +152,7 @@ class ImageEncryptionApp(QWidget):
             self.load_image(self.output_path)
             QMessageBox.information(self, "Success", "Image decrypted successfully!")
         except Exception as e:
-            QMessageBox.critical(self, "Error", str(e))
+            QMessageBox.critical(self, "Error", "Enter a valid number between 0 - 255")
 
     def process_image(self, input_path, output_path, key, method, encrypt):
         image = Image.open(input_path)
